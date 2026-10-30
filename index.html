@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enquête — Articulation AMP, LMMA et PSM à Madagascar</title>
+  <meta name="description" content="Enquête auprès des institutions sur l'articulation entre aires marines protégées (AMP), aires marines gérées localement (LMMA) et planification spatiale marine (PSM) à Madagascar.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+     <p class="topbar-note">©  Aroo Falinirina, <span id="headerYear"></span> · Enquête à usage scientifique</p>
+      <ul class="logos" id="logos" aria-label="Institutions partenaires"></ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-photo" id="heroPhoto" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="hero-org" id="heroOrganizer"></p>
+      <h1 id="heroTitle"></h1>
+      <p class="hero-sub" id="heroSubtitle"></p>
+      <ul class="chips">
+        <li><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10.4 3.2 3.2-1.4 1.4-3.8-3.8V6h2v6.4z"/></svg><span id="chipTime"></span></li>
+        <li><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10z"/></svg><span>Avant le <span id="chipDeadline"></span></span></li>
+        <li><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M18 8h-1V6A5 5 0 0 0 7 6v2H6a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zM9 6a3 3 0 0 1 6 0v2H9V6z"/></svg>Réponses confidentielles</li>
+      </ul>
+    </div>
+    <p class="hero-credit wrap small" id="heroCredit"></p>
+    <svg class="hero-wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30c120 20 240 30 360 20S600 10 720 14s240 30 360 30 240-20 360-24v40H0z" fill="var(--bg)"/></svg>
+  </section>
+
+  <main class="wrap" id="app">
+    <div class="layout">
+      <aside class="sidebar" aria-label="Étapes du questionnaire">
+        <button type="button" class="nav-toggle" id="navToggle" aria-controls="stepList">
+          <span class="muted small">Étape en cours</span><strong id="mobileStepName"></strong>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <nav><ol class="step-list" id="stepList"></ol></nav>
+      </aside>
+
+      <div class="panel" id="formTop">
+        <div class="progress-wrap">
+          <div class="progress-meta"><span id="progressLabel"></span><span id="progressPct"></span></div>
+          <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar" id="progressBar"></div></div>
+        </div>
+
+        <div class="draft-banner" id="draftBanner" hidden>
+          <p><strong>Un brouillon a été retrouvé sur cet appareil.</strong> Souhaitez-vous reprendre là où vous vous étiez arrêté(e) ? </p>
+          <div><button type="button" class="btn btn-primary btn-sm" id="btnResume">Reprendre</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="btnRestart">Recommencer</button></div>
+        </div>
+
+        <form id="form" novalidate>
+          <div id="stepContainer"></div>
+          <div class="form-nav">
+            <button type="button" class="btn btn-ghost" id="btnPrev">← Précédent</button>
+            <span class="save-state muted small" id="saveState" aria-live="polite"></span>
+            <button type="button" class="btn btn-primary" id="btnNext">Suivant</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p><strong id="footerOrganizer"></strong><br>Contact : <a id="footerContact" href="#"></a></p>
+      <p class="muted small">©  by Aroo Falinirina, <span id="footerYear"></span> · Enquête à usage scientifique<br><span id="photoCredits"></span></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/survey-config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
